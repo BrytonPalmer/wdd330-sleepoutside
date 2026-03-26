@@ -36,6 +36,11 @@ header {
   padding: 0.5rem;
 }
 
+header .cart {
+  display:flex;
+  /* align-items: center; */
+}
+
 p {
   padding: 0.75rem;
 }
@@ -118,17 +123,46 @@ button {
 
 /* Cart icon styles */
 .cart {
-  padding-top: 1em;
+  /* padding-top: 1em; */
   position: relative;
   text-align: center;
 }
 
 .cart svg {
   width: 25px;
+  margin-top: 1em;
+}
+.cart-icon {
+  position: relative;
+  width: 25px;   
+  height: 25px;
 }
 
 .cart:hover svg {
   fill: gray;
+}
+.cart a {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* cart supperscript */
+.cart-count {
+  position: absolute;
+  top: 10px;
+  right: -2px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 50%;
+  /* line-height: 1; */
+}
+sup.cart-count{
+  width: 18px;
+  height: 20px;
 }
 
 /* End cart icon styles */

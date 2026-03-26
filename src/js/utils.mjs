@@ -28,3 +28,12 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 
+// uppdates cart count
+export function updateCartCount() {
+  const cart = getLocalStorage('so-cart') || [];
+  const countElement = document.querySelector('.cart-count');
+
+  if (countElement) {
+    countElement.textContent = cart.length > 0 ? cart.length : '';
+  }
+}

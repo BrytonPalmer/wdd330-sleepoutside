@@ -62,3 +62,15 @@ export async function loadHeaderFooter() {
   renderWithTemplate(header, headerElement, null, updateCartCount);
   renderWithTemplate(footer, footerElement);
 }
+
+// render a list using a template
+export function renderListWithTemplate(template, parentElement, list, callback) {
+  const templateElement = document.createElement('template');
+  templateElement.innerHTML = template;
+
+  list.forEach(item => {
+    const clone = templateElement.content.cloneNode(true);
+    callback(item, clone);
+    parentElement.appendChild(clone);
+  });
+}

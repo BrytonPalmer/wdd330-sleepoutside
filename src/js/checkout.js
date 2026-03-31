@@ -66,9 +66,18 @@ if (zipInput) {
 }
 
 // Form validation
-document.getElementById("checkout-form").addEventListener("submit", (e) => {
+document.getElementById("checkout-form").addEventListener("submit", async (e) => {
+  console.log("submit handler fired");
+  e.preventDefault();
+
   if (!e.target.checkValidity()) {
-    e.preventDefault();
     alert("Please fill out all required fields.");
+    return;
   }
+
+  const response = await checkout.checkout(e.target);
+  console.log("Order response:", response);
+  alert("Order submitted!");
 });
+
+

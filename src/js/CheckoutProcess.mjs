@@ -1,4 +1,4 @@
-import ExternalServices from './ProductData.mjs';
+import ProductData from './ProductData.mjs';
 import ShoppingCart from './ShoppingCart.mjs';
 
 export default class CheckoutProcess {
@@ -10,7 +10,7 @@ export default class CheckoutProcess {
     this.shipping = 0;
     this.orderTotal = 0;
 
-    this.services = new ExternalServices();
+    this.services = new ProductData();
   }
 
   // -----------------------------

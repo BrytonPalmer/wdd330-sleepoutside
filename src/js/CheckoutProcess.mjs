@@ -1,4 +1,4 @@
-import ExternalServices from './ExternalServices.mjs';
+import ExternalServices from './ProductData.mjs';
 import ShoppingCart from './ShoppingCart.mjs';
 
 export default class CheckoutProcess {

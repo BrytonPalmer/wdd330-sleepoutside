@@ -1,4 +1,6 @@
-import ExternalServices from './ExternalServices.mjs';
+// import ExternalServices from './ExternalServices.mjs';
+import ProductData from './ProductData.mjs';
+
 import ProductList from './ProductList.mjs';
 import { loadHeaderFooter, getParam } from './utils.mjs';
 
@@ -9,7 +11,8 @@ loadHeaderFooter();
 const category = getParam('category');
 
 // Create the data source (now ExternalServices)
-const dataSource = new ExternalServices();
+// const dataSource = new ExternalServices();
+const dataSource = new ProductData();
 
 // Find the element where products will be rendered
 const listElement = document.querySelector('.product-list');

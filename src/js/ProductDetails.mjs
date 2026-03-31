@@ -23,17 +23,16 @@ export default class ProductDetails {
       .addEventListener('click', this.addProductToCart.bind(this));
   }
 
-//   addProductToCart() {
-//     // Save the product to localStorage
-//     setLocalStorage('so-cart', this.product);
-//   }
 
     addProductToCart() {
     // 1. Load existing cart or create a new one
     let cart = getLocalStorage('so-cart') || [];
 
+    // clone product and add quantity
+    const productToAdd = { ...this.product, quantity: 1};
+
     // 2. Add the new product
-    cart.push(this.product);
+    cart.push(productToAdd);
 
     // 3. Save it back to localStorage
     setLocalStorage('so-cart', cart);

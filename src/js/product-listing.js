@@ -9,6 +9,7 @@ loadHeaderFooter();
 
 // Get the category from the URL (?category=tents)
 const category = getParam('category');
+console.log("CATEGORY PARAM:", category);
 
 // Create the data source (now ExternalServices)
 // const dataSource = new ExternalServices();

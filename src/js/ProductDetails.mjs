@@ -49,7 +49,7 @@ export default class ProductDetails {
 
       <img 
         class="product__image"
-        src="${this.product.Image}" 
+        src="${this.product.Images.PrimaryLarge}" 
         alt="${this.product.Name}"
       />
 

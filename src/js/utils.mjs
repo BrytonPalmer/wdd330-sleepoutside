@@ -28,3 +28,49 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 
+// uppdates cart count
+export function updateCartCount() {
+  const cart = getLocalStorage('so-cart') || [];
+  const countElement = document.querySelector('.cart-count');
+
+  if (countElement) {
+    countElement.textContent = cart.length > 0 ? cart.length : '';
+  }
+}
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  parentElement.innerHTML = template;
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+export async function loadTemplate(path) {
+  const response = await fetch(path);
+  const html = await response.text();
+  return html;
+}
+
+export async function loadHeaderFooter() {
+  const header = await loadTemplate('/partials/header.html');
+  const footer = await loadTemplate('/partials/footer.html');
+
+  const headerElement = document.getElementById('main-header');
+  const footerElement = document.getElementById('main-footer');
+
+  renderWithTemplate(header, headerElement, null, updateCartCount);
+  renderWithTemplate(footer, footerElement);
+}
+
+// render a list using a template
+export function renderListWithTemplate(template, parentElement, list, callback) {
+  const templateElement = document.createElement('template');
+  templateElement.innerHTML = template;
+
+  list.forEach(item => {
+    const clone = templateElement.content.cloneNode(true);
+    callback(item, clone);
+    parentElement.appendChild(clone);
+  });
+}

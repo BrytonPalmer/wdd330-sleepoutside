@@ -1,12 +1,12 @@
 export function setBreadcrumb(text) {
-  const crumb = document.getElementById("breadcrumb");
+  const crumb = document.getElementById('breadcrumb');
   if (!crumb) return;
 
   if (!text) {
-    crumb.textContent = "";
-    crumb.style.display = "none";
+    crumb.textContent = '';
+    crumb.style.display = 'none';
   } else {
     crumb.textContent = text;
-    crumb.style.display = "block";
+    crumb.style.display = 'block';
   }
 }

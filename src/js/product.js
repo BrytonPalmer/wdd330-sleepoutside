@@ -24,11 +24,11 @@ loadHeaderFooter();
 // -----------------------------
 function updateBreadcrumb(category) {
   if (!category) {
-    setBreadcrumb("");
+    setBreadcrumb('');
     return;
   }
 
-  const formatted = category.replace("-", " ");
+  const formatted = category.replace('-', ' ');
   const title = formatted.charAt(0).toUpperCase() + formatted.slice(1);
 
   setBreadcrumb(title);
@@ -38,7 +38,7 @@ function updateBreadcrumb(category) {
 // PAGE INITIALIZATION
 // -----------------------------
 const params = new URLSearchParams(window.location.search);
-const productId = params.get("product");
+const productId = params.get('product');
 
 const dataSource = new ExternalServices();
 const product = new ProductDetails(productId, dataSource);

@@ -4,7 +4,6 @@
 // const checkout = new CheckoutProcess("so-cart", ".order-summary");
 // checkout.init();
 
-
 // loadHeaderFooter();
 
 // import { getLocalStorage } from "./utils.mjs";
@@ -48,36 +47,36 @@
 //   }
 // });
 
-import { loadHeaderFooter } from './utils.mjs';
-import CheckoutProcess from './CheckoutProcess.mjs';
+import { loadHeaderFooter } from "./utils.mjs";
+import CheckoutProcess from "./CheckoutProcess.mjs";
 
 // Initialize the checkout process
-const checkout = new CheckoutProcess('so-cart', '.order-summary');
-checkout.init();   // calculates item subtotal on page load
+const checkout = new CheckoutProcess("so-cart", ".order-summary");
+checkout.init(); // calculates item subtotal on page load
 
 loadHeaderFooter();
 
 // Trigger order total calculation after ZIP code is entered
-const zipInput = document.querySelector('#zip');
+const zipInput = document.querySelector("#zip");
 if (zipInput) {
-  zipInput.addEventListener('blur', () => {
+  zipInput.addEventListener("blur", () => {
     checkout.calculateOrderTotal();
   });
 }
 
 // Form validation
-document.getElementById('checkout-form').addEventListener('submit', async (e) => {
-  // console.log('submit handler fired');
-  e.preventDefault();
+document
+  .getElementById("checkout-form")
+  .addEventListener("submit", async (e) => {
+    // console.log('submit handler fired');
+    e.preventDefault();
 
-  if (!e.target.checkValidity()) {
-    alert('Please fill out all required fields.');
-    return;
-  }
+    if (!e.target.checkValidity()) {
+      alert("Please fill out all required fields.");
+      return;
+    }
 
-  const response = await checkout.checkout(e.target);
-  console.log('Order response:', response);
-  alert('Order submitted!');
-});
-
-
+    const response = await checkout.checkout(e.target);
+    console.log("Order response:", response);
+    alert("Order submitted!");
+  });

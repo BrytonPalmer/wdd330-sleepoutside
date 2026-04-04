@@ -4,8 +4,6 @@
 // import ProductList from './ProductList.mjs';
 // import { import ExternalServices from "./ExternalServices.mjs";
 
-
-
 // // Load header and footer
 // loadHeaderFooter();
 
@@ -26,7 +24,6 @@
 // // Render the products
 // myList.init();
 
-
 // // breadcrumbs
 // import { setBreadcrumb } from "../js/breadcrumb.js";
 
@@ -46,16 +43,16 @@
 
 // loadProducts();
 
-import ExternalServices from './ExternalServices.mjs';
-import { setBreadcrumb } from './breadcrumb.js';
-import { loadHeaderFooter, getParam } from './utils.mjs';
+import ExternalServices from "./ExternalServices.mjs";
+import { setBreadcrumb } from "./breadcrumb.js";
+import { loadHeaderFooter, getParam } from "./utils.mjs";
 
 loadHeaderFooter();
 // -----------------------------
 // BREADCRUMB HELPER
 // -----------------------------
 function updateBreadcrumb(category, count) {
-  const formatted = category.replace('-', ' ');
+  const formatted = category.replace("-", " ");
   const title = formatted.charAt(0).toUpperCase() + formatted.slice(1);
   setBreadcrumb(`${title} → (${count} items)`);
 }
@@ -79,15 +76,15 @@ function productCardTemplate(product) {
 // RENDER FUNCTION
 // -----------------------------
 function renderProductList(products) {
-  const listElement = document.querySelector('.product-list');
-  listElement.innerHTML = products.map(productCardTemplate).join('');
+  const listElement = document.querySelector(".product-list");
+  listElement.innerHTML = products.map(productCardTemplate).join("");
 }
 
 // -----------------------------
 // PAGE INITIALIZATION
 // -----------------------------
 async function loadProducts() {
-  const category = getParam('category');
+  const category = getParam("category");
   const dataSource = new ExternalServices();
 
   const products = await dataSource.getData(category);

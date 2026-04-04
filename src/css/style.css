@@ -37,7 +37,7 @@ header {
 }
 
 header .cart {
-  display:flex;
+  display: flex;
   /* align-items: center; */
 }
 
@@ -134,7 +134,7 @@ button {
 }
 .cart-icon {
   position: relative;
-  width: 25px;   
+  width: 25px;
   height: 25px;
 }
 
@@ -145,7 +145,6 @@ button {
   position: relative;
   display: inline-block;
 }
-
 
 /* cart supperscript */
 .cart-count {
@@ -160,7 +159,7 @@ button {
   border-radius: 50%;
   /* line-height: 1; */
 }
-sup.cart-count{
+sup.cart-count {
   width: 18px;
   height: 20px;
 }
@@ -320,7 +319,7 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
 }
 

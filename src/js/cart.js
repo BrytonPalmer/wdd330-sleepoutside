@@ -42,15 +42,14 @@
 //   return newItem;
 // }
 
-
 // loadHeaderFooter();
 // renderCartContents();
 // updateCartCount();
 
-import { loadHeaderFooter } from './utils.mjs';
-import ShoppingCart from './ShoppingCart.mjs';
+import { loadHeaderFooter } from "./utils.mjs";
+import ShoppingCart from "./ShoppingCart.mjs";
 
 loadHeaderFooter();
 
-const cart = new ShoppingCart('so-cart', '.product-list');
+const cart = new ShoppingCart("so-cart", ".product-list");
 cart.init();

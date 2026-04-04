@@ -28,7 +28,7 @@ export default class ProductDetails {
     let cart = getLocalStorage('so-cart') || [];
 
     // clone product and add quantity
-    const productToAdd = { ...this.product, quantity: 1};
+    const productToAdd = { ...this.product, quantity: 1, Image: this.product.Images.PrimaryLarge};
 
     // 2. Add the new product
     cart.push(productToAdd);

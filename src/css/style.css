@@ -433,3 +433,24 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* annimations */
+.cart-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.cart-animate {
+  animation: cartPop 0.4s ease;
+}
+
+@keyframes cartPop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.25); }
+  60% { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+.cart svg {
+  pointer-events: none;
+}
